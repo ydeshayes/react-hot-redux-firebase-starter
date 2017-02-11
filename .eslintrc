@@ -11,6 +11,9 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "destructuring": true,
+      "spread": true,
       "jsx": true
     }
   },

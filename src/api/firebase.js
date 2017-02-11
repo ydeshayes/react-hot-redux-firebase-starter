@@ -44,6 +44,15 @@ class FirebaseApi {
     });
   }
 
+  static GetValueByKey(path, key, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .equalTo(key)
+      .on('value', callback);
+  }
+
   static GetValueByKeyOnce(path, key) {
     return firebase
       .database()
@@ -53,6 +62,23 @@ class FirebaseApi {
       .once('value');
   }
 
+  static GetValue(path, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .on('value', callback);
+  }
+
+  static GetValueWithLimitToLast(path, limit, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .limitToLast(limit)
+      .on('value', callback);
+  }
+
   static GetChildAddedByKeyOnce(path, key) {
     return firebase
       .database()
@@ -60,6 +86,38 @@ class FirebaseApi {
       .orderByKey()
       .equalTo(key)
       .once('child_added');
+  }
+
+  static GetChildAdded(path, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .on('child_added', callback);
+  }
+
+  static GetChildChanged(path, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .on('child_changed', callback);
+  }
+
+  static GetChildAddedWithLimitToLast(path, limit, callback) {
+    return firebase
+      .database()
+      .ref(path)
+      .orderByKey()
+      .limitToLast(limit)
+      .on('child_added', callback);
+  }
+
+  static Off(path) {
+    return firebase
+      .database()
+      .ref(path)
+      .off();
   }
 
   static databaseSet(path, value) {

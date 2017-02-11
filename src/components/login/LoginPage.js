@@ -11,6 +11,7 @@ export class RegistrationPage extends React.Component {
 
     this.state = {
       user: {
+        name: "",
         email: "",
         password: ""
       },

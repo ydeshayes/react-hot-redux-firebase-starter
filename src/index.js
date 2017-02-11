@@ -20,6 +20,9 @@ import App from './components/App';
 import initialState from './reducers/initialState';
 import configureStore from './store/configureStore'; //eslint-disable-line import/default
 
+import 'jquery';
+import 'bootstrap/dist/js/bootstrap';
+
 // styles
 import './styles/styles.css'; //Webpack can import CSS files too!
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';

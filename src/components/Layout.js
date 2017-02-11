@@ -4,6 +4,14 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {signOut} from '../actions/authActions';
 
+const styles = {
+  layout: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100%'
+  }
+};
+
 class Layout extends React.Component {
 
   constructor(props, context) {
@@ -13,7 +21,7 @@ class Layout extends React.Component {
   render() {
     const {auth, actions, loading, user} = this.props;
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={styles.layout}>
         <Header signOut={actions.signOut} auth={auth} loading={loading} user={user} />
         {this.props.children}
       </div>
