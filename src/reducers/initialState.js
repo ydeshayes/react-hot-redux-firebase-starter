@@ -1,3 +1,5 @@
+import { Map } from 'immutable';
+
 export default {
   routesPermissions: {
     requireAuth: [
@@ -11,6 +13,8 @@ export default {
   user: {
     isAdmin: undefined
   },
+  chats: new Map(),
+  messages: new Map(),
   auth: {
     isLogged: false,
     currentUserUID: null,

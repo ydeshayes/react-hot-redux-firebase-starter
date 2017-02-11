@@ -2,19 +2,13 @@ let path = require('path');
 let webpack = require('webpack');
 
 const config = {
-  devtool: 'source-map',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client?reload=false',
-    './src/index'
-  ],
+  entry: './src/index',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.ProvidePlugin({
         jQuery: 'jquery',
         $: 'jquery',
@@ -34,4 +28,4 @@ const config = {
   }
 };
 
-export default config;
+module.exports = config;

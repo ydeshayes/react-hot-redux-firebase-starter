@@ -17,7 +17,8 @@ function extractUserProperties(firebaseUser) {
     'providerId',
     'refreshToken',
     'uid',
-    'isAdmin'
+    'isAdmin',
+    'name'
   ];
 
   userProperties.map((prop) => {
